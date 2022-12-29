@@ -1,0 +1,28 @@
+﻿@page
+@model security_project.Pages.PlayfairModel
+@{
+    ViewData["Title"] = "Play Fair";
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">The Message</label>
+        <input required type="text" class="form-control" id="message" name="message" aria-describedby="messageHelp">
+        <div id="messageHelp" class="form-text">Enter The Message You want to Encrypt or Decrypt.</div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Key</label>
+        <input required type="text" class="form-control" name="key" id="keyHelp">
+        <div id="keyHelp" class="form-text">Enter The Key (Text Only without Numbers)</div>
+
+        <br />
+        <span id="outputValue">The Output: </span> @ViewData["Message"]
+
+    </div>
+    <button class="btn btn-primary encrypt-btn" id="btnEncrypt" value="Encrypt" type="submit" asp-page-handler="Encrypt">Encrypt</button>
+    <button class="btn btn-primary decrypt-btn" id="btnDecrypt" value="Decypt" type="submit" asp-page-handler="Decrypt">Decrypt</button>
+
+</form>
